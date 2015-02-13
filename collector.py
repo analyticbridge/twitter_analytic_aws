@@ -22,20 +22,22 @@ def main(term):
     if len(term) == 2:
         search = [term[1]]
     else:
-        print "Please provide only one search term. Multi-word terms should be enclosed in quotation marks. \nExample:  python collector.py \"kindle fire\" "
+        print( "Please provide only one search term. Multi-word terms should be enclosed in quotation marks. \nExample:  python collector.py \"kindle fire\" ")
         sys.exit()
 
     collection = 'tweets'
     waiter = TWaiter(api, collection)
     stream = tweepy.Stream(auth, waiter)
 
-    print "Collecting tweets. Please wait."
+    print ("Collecting tweets. Please wait.")
 
     try:
         stream.filter(track=search)
-    except Exception, e:
-        print "An error occurred. No tweets collected.", e
+    except Exception as e:
+        print(("An error occurred. No tweets collected." + str(e)))
         stream.disconnect()
 
 
 if __name__ == '__main__':
+	pass
+
