@@ -39,7 +39,7 @@ class TWaiter(StreamListener):
         # Increase this number to get bigger data!
         if self.counter >= 50000:
             self.output.close()
-            print "Finished collecting tweets."
+            print("Finished collecting tweets.")
             sys.exit()
         return
 
